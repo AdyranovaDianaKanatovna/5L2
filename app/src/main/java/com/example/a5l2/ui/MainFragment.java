@@ -1,17 +1,16 @@
 package com.example.a5l2.ui;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
-
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.example.a5l2.App;
 import com.example.a5l2.R;
@@ -23,9 +22,9 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class MainFragment extends Fragment {
-    FragmentMainBinding binding;
     private final String HOST = "love-calculator.p.rapidapi.com";
-    private final String KEY = "7f31bf3e6fmshc9fe327e036f21dp1d7268jsnc447467dd4ff";
+    private final String KEY = "94f5a78d20msh8c2f12c35d1395bp1fc58ajsn76a13fec0b29";
+    FragmentMainBinding binding;
     NavController navController;
 
     @Override
@@ -35,12 +34,11 @@ public class MainFragment extends Fragment {
         return binding.getRoot();
 
     }
-
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         navController = NavHostFragment.findNavController(this);
-       initClick();
+        initClick();
     }
 
     private void initClick() {
@@ -68,9 +66,9 @@ public class MainFragment extends Fragment {
                     String resultNum = response.body().result;
                     result.putString("fName", fName);
                     result.putString("sName", sName);
+                    result.putString("result", resultNum);
                     result.putString("percentage", percentage);
-                    result.putString("resultNum", resultNum);
-                    navController.navigate(R.id.result_fragment,result);
+                    navController.navigate(R.id.result_fragment, result);
                 }
             }
 

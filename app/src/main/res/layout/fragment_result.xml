@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/sakura"
     android:padding="16dp"
     tools:context=".ui.ResultFragment">
 
     <ImageView
         android:id="@+id/anime_picture"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
         android:layout_marginTop="16dp"
         android:src="@drawable/couple"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,7 +27,7 @@
         android:gravity="center"
         android:text="This is your destining"
         android:textColor="@color/black"
-        android:textSize="28sp"
+        android:textSize="32sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,7 +41,7 @@
         android:gravity="center"
         android:text="Mamoru"
         android:textColor="@color/black"
-        android:textSize="28sp"
+        android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/result" />
@@ -53,7 +54,7 @@
         android:gravity="center"
         android:text="100%"
         android:textColor="@color/black"
-        android:textSize="28sp"
+        android:textSize="52sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/first_name" />
@@ -66,7 +67,7 @@
         android:gravity="center"
         android:text="Usagi"
         android:textColor="@color/black"
-        android:textSize="28sp"
+        android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/percentage_text" />

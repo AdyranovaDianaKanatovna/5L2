@@ -33,39 +33,43 @@ public class ResultFragment extends Fragment {
         navController = NavHostFragment.findNavController(this);
         getResult();
         initClick();
-    }
 
-    private void getResult() {
-        assert getArguments() != null;
-        String first_name = getArguments().getString("first_name");
-        String second_name = getArguments().getString("second_name");
-        String result = getArguments().getString("result");
-        String percentage = getArguments().getString("percentage");
-        binding.firstName.setText(first_name);
-        binding.secondName.setText(second_name);
-        if (result.equals("Everything for good")) {
-            binding.resultText.setText("Everything for good!");
-        } else if (result.equals("Not good choice")) {
-            binding.resultText.setText("Not good choice!");
-        } else if (result.equals("Maybe next time will be better")) {
-            binding.resultText.setText("Maybe next time will be better");
-        } else if (result.equals("Congratulation you have made best choice")) {
-            binding.resultText.setText("Congratulation you have made best choice!");
-        } else if (result.equals("You can choice someone better!")) {
-            binding.resultText.setText("You can choice someone better!");
-        } else {
-            binding.resultText.setText(result);
-        }
-        binding.percentageText.setText(percentage + " % ");
     }
-
     private void initClick() {
         binding.reBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 navController.navigateUp();
             }
         });
     }
+    private void getResult() {
+        assert getArguments() != null;
+        String fName = getArguments().getString("fName");
+        String sName = getArguments().getString("sName");
+        String result = getArguments().getString("result");
+        String percentage = getArguments().getString("percentage");
+
+        binding.firstName.setText(fName);
+        binding.secondName.setText(sName);
+        if (result.equals("All the best!")) {
+            binding.resultText.setText("You are lucky");
+        } else if (result.equals("Not a good choice.")) {
+            binding.resultText.setText("You did not good choice");
+        } else if (result.equals("May be better next time.")) {
+            binding.resultText.setText("You should try one more time");
+        } else if (result.equals("Congratulations! Good choice")) {
+            binding.resultText.setText("Congratulations! good choice!");
+        }
+        else if (result.equals("Can choose someone better.")){
+            binding.resultText.setText("You can choose someone better!");
+        }
+        else {
+            binding.resultText.setText(result);
+        }
+        binding.percentageText.setText(percentage+" %");
+    }
 }
+
 
